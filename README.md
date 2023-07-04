@@ -1,6 +1,6 @@
 ### T2K Group Website 
 
-![T2K Group Logo](public/t2k-logo-black.png)
+![T2K Group Logo](public/t2k-logo-black.webp)
 
 ### Domains:
 - [t2k.group](https://t2k.group) 
@@ -11,33 +11,36 @@
 
 #### Requirements:
 
-The site has a few main requirements and this should be held throughout the design
-- The site should be fast and responsive > its 2023 no one likes a slow site
-- The site should be easy to maintain > no one likes a site that is hard to update. blogs should be easy to add and edit (json / markdown)
-- Site should be professional > This is the face of the company, it should be clean and professional
-
-#### Design:
-
-- The site should be clean and professional
-- The colour scheme should follow this pallet: ![T2K Colours](<design/site pallette.png>)
-
-Colors: #171717, #001D3D, #003566, #FFC300, #F0EDEE
+- *__BLAZINGLY FAST__*
+- Easy to update and maintain. automated update on commit / blog post
+- Easy to add new pages (if needed)
 
 
-#### Blog:
-
-- The blog should be easy to update and maintain
-- uses JSON files to store blog posts
-- gets data from https://t2k.group/json/blog_posts.json
-
-
-TODO
+### TODO
 - [x] Add Privacy Policy
 - [x] Add Terms and Conditions
+- [x] add Sitemap to site
+- [x] Setup a CI/CD pipeline to deploy to the site on merge to main
 
+- [ ] Add contact form to the site and some form of endpoint to handle the data
 - [ ] Add a blog post section to the site with images and text
-- [ ] Add contact form to the site
-- [ ] Fix contact form and add endpoint
-- [ ] Setup a CI/CD pipeline to deploy to the site on merge to master
+
 - [ ] Setup files.t2k.group to host files such as blog post images
 - [ ] make jpg to webp converter for images - python script
+
+##### Blog:
+
+- The blog should be easy to update and maintain
+- The Blog should take a json file and convert it to a blog post
+> The format should be as follows (json):
+> ```json
+> {
+>    "title": "Blog Post Title",
+>    "date": "UNIX Timestamp",
+>    "author": "Author Name",
+>    "image": "image.jpg",
+>    "content": "This is the content"
+>}
+> ```
+> The image should be stored in the public folder or on the files.t2k.group server and the blog should be able to be written in markdown or html
+
