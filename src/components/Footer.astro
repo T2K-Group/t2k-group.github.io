@@ -1,0 +1,35 @@
+---
+import CallToAction from './CallToAction.astro'
+import { Icon } from 'astro-icon'
+
+const currentYear = new Date().getFullYear()
+
+
+---
+
+<footer>
+  <CallToAction />
+  <section class="py-8">
+    <div class="container p-8">
+      <hr class=" mb-8 bg-clip-padding" />
+      <div>
+        <div class="type-icon text-md flex content-center justify-center">
+        <span class="flex">
+        <a href="https://github.com/t2k-group" title="Go to the GitHub page">
+          <Icon pack="ion" name="logo-github" class="w-10 h-10" />
+        </a>
+
+        <a href="https://linkedin/t2k-group" title="Go to the linkedin page">
+          <Icon pack="ion" name="logo-linkedin" class="w-10 h-10"  />
+        </a>
+        </span>
+        </div>
+
+      <!-- Privacy Policy, Terms of Service -->
+      <p class="text-center text-base"> &copy; {{ currentYear }} T2K Group. All rights reserved.</p>
+      <p class="text-center text-sm p-4"><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms and Conditions</a></p>
+      <p class="text-center text-sm">T2K Group is a trading name of Clockr Limited (Registered in England and Wales (13799529))</p>
+
+    </div>
+  </section>
+</footer>

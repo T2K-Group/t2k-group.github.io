@@ -1,0 +1,28 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+import { Icon } from 'astro-icon'
+---
+
+<DefaultLayout title="About">
+
+        <h2 class="font-bold text-center pt-5">About Us</h2>
+
+        <ContentMedia imgSrc="team.webp">
+          <h2 class="font-bold">Bespoke Engineering Solutions</h2>
+          <p class="text-2xl">
+            No two businesses are the same, and we believe your solution shouldn't be either. At our company, we specialize in building bespoke engineering solutions that perfectly fit the unique needs of your business. We are driven by a deep-rooted passion for craftsmanship, ensuring that every project we undertake is executed with meticulous attention to detail and a commitment to excellence.
+            Our team of skilled engineers and designers collaborates closely with you throughout the entire development process. We take the time to truly understand your vision, goals, and challenges, allowing us to create tailor-made solutions that exceed your expectations. From the initial concept to the final implementation, we work tirelessly to ensure that every aspect of your project is flawlessly executed.
+          </p>
+        </ContentMedia>
+        <ContentMedia imgSrc="projects.webp" reverseImg={true}>
+          <h2 class="font-bold">Close Collaboration for Success</h2>
+          <p class="text-2xl">
+            At our company, we believe that the key to successful project completion lies in close collaboration with our clients. We value your unique insights and expertise, and we consider you an integral part of the project team. From the initial consultation to the final delivery, we maintain open lines of communication, actively seeking your feedback and involving you in the decision-making process.
+            By working closely with you, we ensure that every aspect of your project aligns with your business objectives and meets your specific needs. We provide regular progress updates, soliciting your input and addressing any concerns promptly. Our collaborative approach fosters a strong partnership, enabling us to deliver solutions that not only meet your requirements but also exceed your expectations.
+          </p>
+        </ContentMedia>
+
+</DefaultLayout>
