@@ -2,11 +2,14 @@
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 ---
+ 
+ <div class="logo"></div>
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <img src={(await import('../assets/img/logo.webp')).default} alt="T2K Group Logo" width="67" height="67" />
+
+    <img src={(await import('../assets/img/logo.webp')).default} alt="T2K Group Logo" width="67" height="67" />
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
