@@ -1,9 +1,0 @@
-[
-    {
-        "userId": "T2K Group Blogs",
-        "id": 1,
-        "title": "This is a test blog to check the functionality of the blog",
-        "body": "<h1>Test Blog</h1><p>This is a test blog to check the functionality of the blog</p>",
-        "img": "https://raw.githubusercontent.com/T2K-Group/t2kweb/main/public/t2k-logo-black.webp"
-      }
-]
