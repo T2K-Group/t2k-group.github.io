@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Leaflet JSON Heatmap</title>
+  <title>T2K Group - Signal Map</title>
 
   <!-- Leaflet CSS -->
   <link
@@ -79,16 +79,12 @@
       radius: 18,
       blur: 10,
       maxZoom: 17,
-      minOpacity: 0.5,
       gradient: {
-        0.0: "#00ffff",
-        0.2: "#00ff00",
-        0.4: "#ffff00",
-        0.6: "#ff9900",
-        0.8: "#ff0000",
-        1.0: "#800000"
+        0.0: "rgba(0, 255, 255, 0.05)", // very transparent cyan
+        0.5: "rgba(0, 255, 0, 0.05)",    // very transparent green
       }
     }).addTo(map);
+
 
     if (allPoints.length) {
       map.fitBounds(allPoints);
@@ -119,7 +115,26 @@
     }
   }
 
-  // 🚀 Run loaders
+  const legend = L.control({ position: "bottomright" });
+
+    legend.onAdd = function (map) {
+      const div = L.DomUtil.create("div", "info legend");
+      div.style.background = "white";
+      div.style.padding = "6px";
+      div.style.border = "1px solid #ccc";
+      div.style.borderRadius = "4px";
+      div.innerHTML = `
+        <h4>Map Key</h4>
+        <div><span style="display:inline-block;width:12px;height:12px;background:#0000ff;margin-right:4px;"></span> Station</div>
+        <div><span style="display:inline-block;width:12px;height:12px;background:rgba(0,255,0,0.5);margin-right:4px;"></span> Signal</div>
+      `;
+      return div;
+    };
+
+    legend.addTo(map);
+
+
+
   loadHeatmap();
   loadStations();
 </script>
