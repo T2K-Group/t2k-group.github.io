@@ -43,7 +43,7 @@ The T2K Group website positions the business primarily as a UK IoT engineering c
 - Routes ATLAS, IoT engineering, partnership and general enquiries.
 - Prompts visitors for operational context, environment and outcomes.
 - Uses an honest draft-form state until an approved delivery endpoint is connected.
-- Still requires approved email, telephone and registered-company details before publication.
+- Displays the approved company email and registered-office details.
 
 ## `blog/` - IoT Engineering Insights
 
@@ -60,7 +60,7 @@ The T2K Group website positions the business primarily as a UK IoT engineering c
 ## `legal/`
 
 - Contains draft Privacy and Website Terms pages.
-- Both require legal entity, registered-company and contact details before publication.
+- Both identify T2K Group Limited and provide its registered office and contact email.
 
 ## Shared design and production SEO
 
@@ -75,6 +75,6 @@ The T2K Group website positions the business primarily as a UK IoT engineering c
 
 - Approved photographs for Jack Fitton and Dominik Powell, and any additional team profiles.
 - T2K company history and dates approved for public use.
-- Exact legal entity, registration information, postal address and contact details.
+- Company registration number, if it is to be displayed publicly.
 - An approved enquiry delivery and privacy workflow.
 - Legal approval of Privacy and Terms.
