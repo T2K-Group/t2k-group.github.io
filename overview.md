@@ -33,10 +33,9 @@ The T2K Group website positions the business primarily as a UK IoT engineering c
 - Describes T2K Group as a UK IoT product and engineering organisation.
 - Explains the hardware-to-cloud capability and relationship between T2K Group and ATLAS.
 - Adds Organisation structured data with verified subject areas and UK market context.
-- Includes named engineering profiles for Jack Fitton and Dominik Powell.
-- Covers Jack’s University of York engineering Master’s degree, public-sector and product-design experience, Labman Multivial electronics work, authorship of ATLAS and leadership of T2K electronics programmes.
-- Covers Dominik’s University of York education, robotics engineering work at DLR in Germany, and understanding of firmware, software and operational requirements.
-- Adds Person structured data for both engineers without inventing photographs, customer projects or legal details.
+- Includes a named engineering profile for Jack Fitton.
+- Covers Jack’s University of York engineering Master’s degree, public-sector and product-design experience, authorship of ATLAS and leadership of T2K electronics programmes.
+- Adds Person structured data for Jack without inventing photographs, customer projects or legal details.
 
 ## `contact/index.html` - Contact
 
@@ -54,8 +53,8 @@ The T2K Group website positions the business primarily as a UK IoT engineering c
   - `hardware-software-boundaries.html` - IoT architecture and system integration.
   - `prototype-the-uncertainty.html` - focused IoT prototyping and evidence.
 - Each article has unique metadata, Article structured data, breadcrumb structured data, named-person authorship and an IoT Engineering enquiry route.
-- Every article is visibly attributed to Jack Fitton and Dominik Powell and links to both About-page profiles.
-- Article structured data identifies both authors as people with their T2K affiliations and University of York education; Jack’s supplied role is also included.
+- Every article is visibly attributed to Jack Fitton and links to his About-page profile.
+- Article structured data identifies Jack as a person with his T2K affiliation, University of York education and supplied role.
 
 ## `legal/`
 
@@ -73,7 +72,7 @@ The T2K Group website positions the business primarily as a UK IoT engineering c
 
 ## Information still required before publication
 
-- Approved photographs for Jack Fitton and Dominik Powell, and any additional team profiles.
+- Approved photographs for Jack Fitton and any additional team profiles.
 - T2K company history and dates approved for public use.
 - Company registration number, if it is to be displayed publicly.
 - An approved enquiry delivery and privacy workflow.
