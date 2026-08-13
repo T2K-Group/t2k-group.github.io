@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.querySelectorAll("[data-draft-contact-form]").forEach((form) => {
+  document.querySelectorAll("[data-contact-form]").forEach((form) => {
     const submitField = form.querySelector('button[type="submit"]')?.closest(".field");
     if (submitField) {
       const turnstileField = document.createElement("div");
@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
             form_details: {
               name: formData.get("name"),
               email: formData.get("email"),
+              organisation: formData.get("organisation"),
+              topic: formData.get("topic"),
               message: formData.get("requirement"),
             },
           }),
