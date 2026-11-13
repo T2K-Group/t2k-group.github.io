@@ -64,3 +64,42 @@
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 @media(max-width:940px) { .elections .site-nav { top:86px; } }
 @media(prefers-color-scheme:dark) { .elections .election-footer p { color:#c2d5c9; } }
+
+/* Contact shares the election homepage's editorial layout and palette. */
+.contact-page { --line:#cedad1; --surface-soft:#f6f7f3; }
+.contact-hero { padding:36px 0 64px; background:#f0f3ed; }
+.contact-hero .breadcrumbs { margin-bottom:36px; }
+.contact-hero h1 { margin:20px 0 24px; font-size:clamp(44px,6vw,72px); font-weight:550; line-height:1.06; letter-spacing:-.055em; }
+.contact-hero h1 em { font-family:Georgia,serif; font-weight:400; color:var(--brand); }
+.contact-hero .intro { max-width:650px; margin-bottom:0; }
+.contact-page .contact-layout { grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr); gap:80px; }
+.contact-page .contact-card { padding:0; border:0; border-radius:0; }
+.contact-form-heading { margin-bottom:32px; }
+.contact-form-heading h2 { font-size:36px; margin-bottom:12px; }
+.contact-page .contact-form { gap:24px 20px; }
+.contact-page .field label { font-size:14px; font-weight:650; }
+.contact-page .field input,.contact-page .field select,.contact-page .field textarea { min-height:48px; border-radius:5px; font:inherit; padding:12px 14px; }
+.contact-page .field textarea { min-height:170px; }
+.contact-page .form-note,.contact-page .form-status { font-size:13px; margin:0; }
+.contact-page .form-status { border-radius:5px; }
+.contact-page .field button { justify-self:start; }
+.contact-page .contact-side { gap:32px; }
+.contact-guidance { padding:30px; border-radius:8px; background:#143d35; }
+.contact-page .contact-guidance .section-kicker { color:#b1c9bd; }
+.contact-page .contact-guidance h3 { color:#fff; margin:24px 0 8px; }
+.contact-page .contact-guidance p { color:#c2d5c9; font-size:15px; margin:0 0 16px; }
+.contact-details { padding-top:24px; border-top:1px solid #cedad1; }
+.contact-details h3 { font-size:21px; overflow-wrap:anywhere; }
+.contact-details a { text-decoration:none; }
+.contact-details a:hover { text-decoration:underline; }
+.contact-details p { font-size:14px; }
+.contact-page .contact-next-steps { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.elections :is(a,button,input,select,textarea):focus-visible { outline:3px solid #146b52; outline-offset:3px; }
+.elections .journey-panel :focus-visible,.contact-guidance :focus-visible { outline-color:#bce1a6; }
+@media(max-width:900px) { .contact-page .contact-layout { gap:40px; } }
+@media(max-width:700px) {
+  .contact-hero { padding:24px 0 48px; }
+  .contact-page .contact-layout,.contact-page .contact-next-steps { grid-template-columns:1fr; }
+  .contact-page .contact-layout { gap:48px; }
+  .contact-form-heading h2 { font-size:32px; }
+}

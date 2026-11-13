@@ -1,0 +1,47 @@
+/* Portable T2K election theme. Opt in on new sites; no component styles. */
+:root {
+  --brand: #146b52;
+  --brand-dark: #0b4c3b;
+  --brand-soft: #e8f2ed;
+  --ink: #243b3a;
+  --ink-strong: #102f2d;
+  --muted: #576c68;
+  --surface: #ffffff;
+  --surface-hero: #f0f3ed;
+  --surface-case-study: #e9efe7;
+  --surface-soft: #f6f7f3;
+  --surface-dark: #143d35;
+  --line: #cedad1;
+  --text-on-brand: #ffffff;
+  --text-on-dark: #ffffff;
+  --body-on-dark: #c2d5c9;
+  --muted-on-dark: #b1c9bd;
+  --accent-signal: #bce1a6;
+  --status-available: #d2efbc;
+  --status-upcoming: #e8dcc1;
+  --focus-on-light: #146b52;
+  --focus-on-dark: #bce1a6;
+  --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-editorial: Georgia, serif;
+  --content-width: 1160px;
+  --reading-width: 660px;
+  --page-gutter: 32px;
+  --radius-button: 5px;
+  --radius-panel: 8px;
+  --radius-badge: 3px;
+  --shadow-panel: 0 24px 50px #173d3514;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-20: 80px;
+  --space-24: 96px;
+}
+
+@media (max-width: 700px) {
+  :root { --page-gutter: 20px; }
+}
