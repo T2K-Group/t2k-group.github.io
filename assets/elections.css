@@ -103,3 +103,33 @@
   .contact-page .contact-layout { gap:48px; }
   .contact-form-heading h2 { font-size:32px; }
 }
+
+/* Campaign articles and blog listing. */
+.blog-hero { background:#f0f3ed; padding:48px 0 64px; }
+.blog-hero .breadcrumbs { margin-bottom:32px; }
+.blog-hero h1 { max-width:940px; font-size:clamp(36px,4.7vw,60px); font-weight:550; line-height:1.12; letter-spacing:-.045em; margin:20px 0 28px; }
+.blog-hero h1 em { color:var(--brand); font:italic 1em Georgia,serif; }
+.post-meta { display:flex; flex-wrap:wrap; gap:8px 24px; font-size:13px; color:var(--muted); }
+.election-post-layout { display:grid; grid-template-columns:minmax(0,740px) minmax(0,260px); gap:80px; align-items:start; }
+.election-post { min-width:0; font-size:17px; }
+.election-post>p:first-child { font-size:20px; margin-top:0; }
+.election-post h2 { font-size:30px; margin:48px 0 20px; scroll-margin-top:110px; }
+.election-post p[id] { scroll-margin-top:110px; }
+.election-post a { color:var(--brand-dark); text-underline-offset:3px; overflow-wrap:anywhere; }
+.source-reference { font-size:12px; white-space:nowrap; }
+.post-contents { position:sticky; top:118px; }
+.post-contents ol { padding-left:20px; font-size:14px; }
+.post-contents li { margin:12px 0; }
+.post-contents a { text-underline-offset:3px; }
+.post-interest { padding-top:20px; margin-top:28px; border-top:1px solid #cedad1; }
+.post-interest p { font-size:14px; }
+.elections .article-card { border-color:#cedad1; border-radius:8px; }
+.elections .article-card h2 { font-size:28px; }
+.elections .article-card h2 a { text-decoration:none; }
+.elections .article-card h2 a:hover { text-decoration:underline; }
+.elections .article-card p { font-size:16px; }
+.election-featured-post { grid-column:1 / -1; background:#f6f7f3; padding:36px; }
+.election-featured-post .post-meta { margin-top:16px; }
+.elections .article-concept { background:#e8f2ed; color:var(--brand-dark); }
+@media(max-width:940px) { .election-post-layout { grid-template-columns:1fr; gap:40px; } .post-contents { position:static; grid-row:1; padding-bottom:24px; border-bottom:1px solid #cedad1; } .post-interest { display:none; } }
+@media(max-width:700px) { .blog-hero { padding:32px 0 48px; } .election-featured-post { padding:24px; } .election-post h2 { font-size:27px; } }
