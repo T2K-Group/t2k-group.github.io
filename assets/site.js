@@ -77,3 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Keep launch enquiries routed through the existing contact form.
+document.addEventListener("DOMContentLoaded", () => {
+  if (new URLSearchParams(window.location.search).get("topic") === "digital-poll-clerk") {
+    const topic = document.querySelector('select[name="topic"]');
+    if (topic) topic.value = "Digital Poll Clerk — launch interest";
+  }
+  document.querySelectorAll('[data-navigation] a').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.querySelector('[data-navigation]')?.classList.remove('open');
+      document.querySelector('[data-menu-toggle]')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
