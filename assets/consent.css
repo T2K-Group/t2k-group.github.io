@@ -19,6 +19,7 @@
 .consent-category h3 span { float:right; font-size:14px; color:#576c68; font-weight:400; }
 .consent-category input { width:20px; height:20px; vertical-align:middle; accent-color:#146b52; margin:0 10px 0 0; }
 .consent-dialog .consent-actions { margin-top:24px; }
-.consent-settings { min-height:44px; background:transparent; border:0; padding:8px 0; font:inherit; color:inherit; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+.consent-settings { position:fixed; right:max(20px, env(safe-area-inset-right)); bottom:max(20px, env(safe-area-inset-bottom)); z-index:1900; display:grid; place-items:center; width:52px; height:52px; padding:12px; border:1px solid #0b4c3b; border-radius:50%; background:#146b52; color:#fff; box-shadow:0 4px 16px #143d3533; cursor:pointer; }
+.consent-settings:hover { background:#0b4c3b; }
 .consent-banner :focus-visible,.consent-dialog :focus-visible,.consent-settings:focus-visible { outline:3px solid #146b52; outline-offset:3px; }
 @media(max-width:760px) { .consent-banner { display:block; padding:20px; } .consent-banner .consent-actions { margin-top:20px; } .consent-dialog { padding:20px; } }

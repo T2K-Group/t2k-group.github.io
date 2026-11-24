@@ -67,7 +67,7 @@
     dialog.className = 'consent-dialog';
     dialog.setAttribute('aria-labelledby', 'consent-preferences-title');
     dialog.innerHTML = `<form method="dialog"><header><h2 id="consent-preferences-title">Cookie preferences</h2><button type="submit" value="close" class="consent-close" aria-label="Close cookie preferences">Close</button></header>
-      <p>Choose whether to allow optional cookies. You can change your choice at any time using Cookie settings in the footer.</p>
+      <p>Choose whether to allow optional cookies. You can change your choice at any time using the cookie settings button in the bottom-right corner.</p>
       <div class="consent-category"><h3>Essential <span>Always active</span></h3><p>Remembers your consent choice and supports contact-form security. These are needed for the site to work.</p></div>
       <div class="consent-category"><label><input type="checkbox" name="analytics"> Allow analytics</label><p>Allows optional tools that measure how the website is used. Google Analytics measures visits and page usage to help us improve the website. It loads only if you opt in.</p></div>
       <p><a href="${privacyUrl}">Read our privacy policy</a></p>
@@ -83,9 +83,12 @@
     const settings = document.createElement('button');
     settings.type = 'button';
     settings.className = 'consent-settings';
-    settings.textContent = 'Cookie settings';
+    settings.setAttribute('aria-label', 'Cookie settings');
+    settings.setAttribute('aria-haspopup', 'dialog');
+    settings.title = 'Cookie settings';
+    settings.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9 4 4 0 0 0 5 5 4 4 0 0 0 4 4Z"/><circle cx="8" cy="9" r=".8" fill="currentColor"/><circle cx="8" cy="15" r=".8" fill="currentColor"/><circle cx="13" cy="12" r=".8" fill="currentColor"/><circle cx="15" cy="17" r=".8" fill="currentColor"/></svg>';
     settings.addEventListener('click', openSettings);
-    (document.querySelector('.site-footer .footer-bottom') || document.querySelector('.site-footer') || document.body).append(settings);
+    document.body.append(settings);
 
     function save(analytics, source) {
       choice = { version: 1, analytics, savedAt: Date.now() };
