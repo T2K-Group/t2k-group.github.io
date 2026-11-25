@@ -78,11 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Keep launch enquiries routed through the existing contact form.
+// Keep Digital Poll Clerk enquiries routed through the existing contact form.
 document.addEventListener("DOMContentLoaded", () => {
   if (new URLSearchParams(window.location.search).get("topic") === "digital-poll-clerk") {
     const topic = document.querySelector('select[name="topic"]');
-    if (topic) topic.value = "Digital Poll Clerk — launch interest";
+    if (topic) topic.value = "Digital Poll Clerk — demo enquiry";
   }
   document.querySelectorAll('[data-navigation] a').forEach((link) => {
     link.addEventListener('click', () => {
