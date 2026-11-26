@@ -77,6 +77,7 @@
 .contact-form-heading { margin-bottom:32px; }
 .contact-form-heading h2 { font-size:36px; margin-bottom:12px; }
 .contact-page .contact-form { gap:24px 20px; }
+.contact-page [data-demo-preference][hidden] { display:none; }
 .contact-page .field label { font-size:14px; font-weight:650; }
 .contact-page .field input,.contact-page .field select,.contact-page .field textarea { min-height:48px; border-radius:5px; font:inherit; padding:12px 14px; }
 .contact-page .field textarea { min-height:170px; }

@@ -9,6 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelectorAll("[data-contact-form]").forEach((form) => {
+    const demoTopic = "Digital Poll Clerk 20-minute demo";
+    const topic = form.querySelector('select[name="topic"]');
+    const demoPreferences = form.querySelectorAll("[data-demo-preference]");
+    const updateDemoPreferences = () => {
+      const isDemo = topic?.value === demoTopic;
+      demoPreferences.forEach((field) => {
+        field.hidden = !isDemo;
+        const input = field.querySelector("input");
+        if (input) input.disabled = !isDemo;
+      });
+    };
+
+    if (topic && new URLSearchParams(window.location.search).get("topic") === "digital-poll-clerk") {
+      topic.value = demoTopic;
+    }
+    topic?.addEventListener("change", updateDemoPreferences);
+    updateDemoPreferences();
+
     const submitField = form.querySelector('button[type="submit"]')?.closest(".field");
     if (submitField) {
       const turnstileField = document.createElement("div");
@@ -39,6 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const formData = new FormData(form);
+      const message = [formData.get("requirement")];
+      if (formData.get("topic") === demoTopic) {
+        const date = formData.get("demo-date");
+        const time = formData.get("demo-time");
+        if (date) {
+          const [year, month, day] = date.split("-");
+          message.push(`Preferred demo date: ${day}/${month}/${year}`);
+        }
+        if (time) message.push(`Preferred demo time (UK): ${time}`);
+      }
       submitButton?.setAttribute("disabled", "");
       setStatus("Sending your enquiry...");
 
@@ -56,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
               email: formData.get("email"),
               organisation: formData.get("organisation"),
               topic: formData.get("topic"),
-              message: formData.get("requirement"),
+              message: message.join("\n"),
             },
           }),
         });
@@ -66,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         form.reset();
+        updateDemoPreferences();
         setStatus("Thank you. Your enquiry has been sent.");
       } catch (error) {
         console.error("Contact form submission failed", error);
@@ -78,12 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Keep Digital Poll Clerk enquiries routed through the existing contact form.
 document.addEventListener("DOMContentLoaded", () => {
-  if (new URLSearchParams(window.location.search).get("topic") === "digital-poll-clerk") {
-    const topic = document.querySelector('select[name="topic"]');
-    if (topic) topic.value = "Digital Poll Clerk — demo enquiry";
-  }
   document.querySelectorAll('[data-navigation] a').forEach((link) => {
     link.addEventListener('click', () => {
       document.querySelector('[data-navigation]')?.classList.remove('open');
