@@ -12,14 +12,14 @@
 .election-hero { background:#f0f3ed; padding:88px 0 96px; }
 .election-hero-grid { display:grid; grid-template-columns:1.15fr 1fr; align-items:center; gap:90px; }
 .election-hero h1 { font-size:clamp(56px,6.5vw,86px); font-weight:550; line-height:1.02; letter-spacing:-.065em; margin:24px 0; }
-.election-hero h1 em { font-family:Georgia,serif; font-weight:400; color:var(--brand); }
+.election-hero h1 .heading-accent { font-family:inherit; font-style:normal; font-weight:300; color:var(--brand); }
 .elections .intro { font-size:19px; line-height:1.65; max-width:560px; }
 .election-hero .button-row { margin-top:32px; }
 .journey-panel { background:#143d35; padding:30px; border-radius:8px; color:#d9e9e0; box-shadow:0 24px 50px #173d3514; }
 .panel-top { display:flex; justify-content:space-between; align-items:center; font-size:10px; letter-spacing:.1em; padding-bottom:32px; border-bottom:1px solid #ffffff26; }
 .signal-dot { width:8px; height:8px; border-radius:50%; background:#bce1a6; }
 .journey-stop { display:flex; gap:22px; padding:30px 0; border-bottom:1px solid #ffffff26; }
-.journey-number { color:#afcbbb; font:italic 27px Georgia,serif; }
+.journey-number { color:#afcbbb; font-size:27px; font-weight:300; }
 .journey-stop small { color:#b1c9bd; font-size:9px; letter-spacing:.11em; }
 .elections .journey-stop h2 { color:white; font-size:29px; margin:8px 0; }
 .elections .journey-stop p { color:#c2d5c9; font-size:14px; margin:8px 0 18px; }
@@ -48,7 +48,7 @@
 .deployment-section { padding:80px 0; background:#f6f7f3; }
 .deployment-steps { list-style:none; counter-reset:step; display:grid; grid-template-columns:repeat(4,1fr); padding:0; gap:32px; margin:48px 0 0; }
 .deployment-steps li { counter-increment:step; border-top:1px solid #cbd8ce; padding-top:20px; }
-.deployment-steps li:before { content:'0' counter(step); color:var(--brand); font:italic 27px Georgia,serif; }
+.deployment-steps li:before { content:'0' counter(step); color:var(--brand); font-size:27px; font-weight:300; }
 .deployment-steps p { font-size:14px; }
 .election-cta { padding:80px 0; text-align:center; }
 .election-footer { display:flex; justify-content:space-between; gap:30px; align-items:center; }
@@ -70,7 +70,7 @@
 .contact-hero { padding:36px 0 64px; background:#f0f3ed; }
 .contact-hero .breadcrumbs { margin-bottom:36px; }
 .contact-hero h1 { margin:20px 0 24px; font-size:clamp(44px,6vw,72px); font-weight:550; line-height:1.06; letter-spacing:-.055em; }
-.contact-hero h1 em { font-family:Georgia,serif; font-weight:400; color:var(--brand); }
+.contact-hero h1 .heading-accent { font-family:inherit; font-style:normal; font-weight:300; color:var(--brand); }
 .contact-hero .intro { max-width:650px; margin-bottom:0; }
 .contact-page .contact-layout { grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr); gap:80px; }
 .contact-page .contact-card { padding:0; border:0; border-radius:0; }
@@ -109,7 +109,7 @@
 .blog-hero { background:#f0f3ed; padding:48px 0 64px; }
 .blog-hero .breadcrumbs { margin-bottom:32px; }
 .blog-hero h1 { max-width:940px; font-size:clamp(36px,4.7vw,60px); font-weight:550; line-height:1.12; letter-spacing:-.045em; margin:20px 0 28px; }
-.blog-hero h1 em { color:var(--brand); font:italic 1em Georgia,serif; }
+.blog-hero h1 .heading-accent { color:var(--brand); font-family:inherit; font-style:normal; font-weight:300; }
 .post-meta { display:flex; flex-wrap:wrap; gap:8px 24px; font-size:13px; color:var(--muted); }
 .election-post-layout { display:grid; grid-template-columns:minmax(0,740px) minmax(0,260px); gap:80px; align-items:start; }
 .election-post { min-width:0; font-size:17px; }
