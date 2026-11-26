@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Poll Clerk | Council data protection and polling continuity</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --brand: #146b52;
+      --heading: #102f2d;
+      --panel: #143d35;
+      --panel-text: #ecf4ee;
+      --ink: #243b3a;
+      --muted: #576c68;
+      --sage: #e9efe7;
+      --paper: #f6f7f3;
+      --soft: #e8f2ed;
+      --divider: #cedad1;
+      --lime: #bce1a6;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--sage); color: var(--ink); font: 11.5pt/1.48 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .sheet { display: flex; flex-direction: column; width: min(210mm, 100%); min-height: 296mm; margin: 24px auto; padding: 13mm 16mm 11mm; background: #fff; box-shadow: 0 16px 40px #173d3514; }
+    h1, h2, h3 { margin: 0; color: var(--heading); line-height: 1.12; text-wrap: balance; }
+    h1 { max-width: 22ch; color: #fff; font-size: 33pt; font-weight: 600; letter-spacing: -.045em; }
+    h2 { max-width: 26ch; font-size: 30pt; font-weight: 600; letter-spacing: -.045em; }
+    h3 { margin-bottom: 2mm; font-size: 14.5pt; letter-spacing: -.023em; }
+    p, ul, ol { margin: 0; }
+    p + p { margin-top: 2mm; }
+    a { color: var(--brand); text-underline-offset: 2px; }
+    a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+    .eyebrow { color: var(--brand); font-size: 9pt; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+    .cover { position: relative; padding: 8mm; border-radius: var(--radius); color: var(--panel-text); background: var(--panel); }
+    .cover .eyebrow { margin-bottom: 3mm; color: var(--lime); }
+    .cover h1 { max-width: calc(100% - 21mm); }
+    .cover p:last-child { max-width: 56ch; margin-top: 3mm; }
+    .logo { position: absolute; top: 8mm; right: 8mm; width: 16mm; aspect-ratio: 1; overflow: hidden; border-radius: 6px; background: white; }
+    .logo img { position: absolute; width: 168.75%; height: auto; left: -34.375%; top: -25%; }
+    .masthead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2mm 6mm; margin-bottom: 8mm; padding-top: 3mm; border-top: 2px solid var(--brand); }
+    .masthead strong { color: var(--heading); font-size: 10pt; }
+    .intro { max-width: 67ch; margin-top: 3mm; }
+    .block { margin-top: 7mm; }
+    .flow { margin: 6mm 0 0; }
+    .flow-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5mm; margin-top: 2mm; }
+    .flow-item { position: relative; padding: 3mm; border: 1px solid var(--divider); border-radius: 5px; background: var(--paper); font-size: 10.5pt; }
+    .flow-item:not(:last-child)::after { position: absolute; top: 50%; left: calc(100% + 1mm); color: var(--brand); content: '\2192'; transform: translateY(-50%); }
+    .flow-item strong { display: block; margin-bottom: 1mm; color: var(--heading); }
+    .flow-label { display: block; margin-top: 3mm; color: var(--brand); font-size: 10pt; font-weight: 700; }
+    .callout { margin-top: 5mm; padding: 4mm 5mm; border-left: 3px solid var(--brand); background: var(--soft); }
+    .callout h3 { margin-bottom: 1.5mm; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4mm 6mm; }
+    .grid > * { padding-top: 3mm; border-top: 1px solid var(--divider); }
+    .rows { list-style: none; padding: 0; counter-reset: step; }
+    .rows li { counter-increment: step; display: grid; grid-template-columns: 8mm minmax(0, 1fr); gap: 2mm; padding: 3mm 0; border-top: 1px solid var(--divider); }
+    .rows li::before { content: counter(step, decimal-leading-zero); color: var(--brand); font: italic 14pt/1.25 Georgia, serif; }
+    .rows strong, .facts strong { color: var(--heading); }
+    .facts { padding-left: 5mm; }
+    .facts li + li { margin-top: 2mm; }
+    .contents { display: flex; flex-wrap: wrap; gap: 2mm 6mm; margin-top: 5mm; font-size: 10pt; }
+    .links { margin-top: 3mm; font-size: 10pt; }
+    footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2mm 6mm; margin-top: auto; padding-top: 3mm; border-top: 1px solid var(--divider); color: var(--muted); font-size: 9pt; }
+    .content { margin-bottom: 8mm; }
+    @media screen and (max-width: 625px) {
+      .sheet { min-height: auto; margin: 0 auto 14px; padding: 6mm; }
+      .cover { padding: 5mm; }
+      .logo { top: 5mm; right: 5mm; width: 13mm; }
+      h1, h2 { font-size: 24pt; }
+      .masthead { margin-bottom: 5mm; }
+      .grid, .flow-row { grid-template-columns: 1fr; }
+      .flow-item:not(:last-child)::after { top: 100%; left: 50%; content: '\2193'; transform: translateX(-50%); }
+    }
+    @page { size: A4 portrait; margin: 0; }
+    @media print {
+      body { background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .sheet { width: 210mm; margin: 0; box-shadow: none; break-after: page; }
+      .sheet:last-child { break-after: auto; }
+      h2, h3, .flow-label { break-after: avoid; }
+      .cover, .flow, .callout, .grid > *, .rows li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <section class="sheet" aria-labelledby="overview">
+    <header class="cover">
+      <p class="eyebrow">Digital Poll Clerk</p>
+      <h1 id="overview">Data protection and polling continuity</h1>
+      <div class="logo"><img src="data:image/webp;base64,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ancMOvczamem9kxo3vH51plozcehf//WhnfZvI3fhh6e379M+3lo45EX1S9D/cUR6OTWon2J7EULuvm9y5ekfB/o6OMHF3UwDk39V0qNC2qUTOjrieWOT3c5Ab09uy3YzuL//c///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///M///1lWUDggChEAAFAbAZ0BKugD6AM+kUiiTKWkoyIhdGgosBIJaW7hd/XtsH/3Dz3zE61c0JcSnC7eTnyX0X9Nf7t2Uf6P+k/03+6+z8E79+/1vCDwAvw/+jf13eCQAfVX9WfarmNKnZ13+q8YP1p7Bvlj+ub0bQa0iTGqRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mOsLx9ORbaZb1QXEwBVkW2mW9UFxMAVZFtplvVBcSVRbVBb7I+t+a+E9b818J635r4T1vzXwnrfmvhPW/NfCet+a+E9b818J635r4T1vzXwn0gXGAXTHSgCrIttMcfrnDa89k6f816GfJv2CrNdOGy6foZ8m/YKs10QLjALpjpQBVkW2UfrnDa89lmMAVZFtplvVBcTAFWRbaZb1QXEwBVkW2mW88vL8rMXEwBVkW2mW9UFxMAVZFtplvVBcTAFWRbaY4/XOjd0wBVkW2mW9UFxMAVZFtplvVBcTAFWRbaZbkfrnDa89lmOdAqyIA2Kq2QV+z/jgWV9tpT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" width="1000" height="1000" alt=""></div>
+      <p>A guide for council elections, IT and legal teams.</p>
+    </header>
+    <div class="content">
+      <div class="block">
+        <p class="eyebrow">For elections teams</p>
+        <h2>Where elector data goes</h2>
+        <p class="intro">Prepare registers in the dashboard, use them at the station, and collect the polling records and signed returns centrally.</p>
+      </div>
+      <figure class="flow block" aria-label="The register moves from the council to the dashboard and tablet. Returns travel back through the dashboard to the council.">
+        <span class="flow-label">Before polling</span>
+        <div class="flow-row">
+          <div class="flow-item"><strong>Council</strong>Provides the register for each station and contest.</div>
+          <div class="flow-item"><strong>DPC dashboard</strong>Publishes the register in an encrypted station package.</div>
+          <div class="flow-item"><strong>Station tablet</strong>The Presiding Officer unlocks the package with its QR code and matching password.</div>
+        </div>
+        <span class="flow-label">During and after polling</span>
+        <div class="flow-row">
+          <div class="flow-item"><strong>Station tablet</strong>Uploads polling records and the signed close-of-poll declaration.</div>
+          <div class="flow-item"><strong>DPC dashboard</strong>Shows records as they arrive and makes completed station returns available.</div>
+          <div class="flow-item"><strong>Council</strong>Authorised administrators securely download the returns.</div>
+        </div>
+      </figure>
+      <aside class="callout">
+        <h3>How photo ID is handled</h3>
+        <p>Staff inspect the document in person. DPC records the accepted ID category and relevant outcomes, such as a refusal or private check request. DPC keeps no photos, scans or document numbers.</p>
+      </aside>
+      <nav class="contents" aria-label="In this guide">
+        <a href="#polling">Polling day and close</a>
+        <a href="#storage">Technical controls</a>
+        <a href="#assurance">Retention and DPA</a>
+      </nav>
+    </div>
+    <footer><span>T2K Group Limited · Elections team overview</span><span>1 / 5</span></footer>
+  </section>
+
+  <section class="sheet" aria-labelledby="polling">
+    <header class="masthead"><strong>Digital Poll Clerk</strong><span class="eyebrow">For elections teams</span></header>
+    <div class="content">
+      <h2 id="polling">Running the poll and collecting returns</h2>
+      <p class="intro">Once the station is set up, staff can continue issuing ballots through a connection outage. The tablet uploads saved records when the connection returns.</p>
+
+      <div class="block">
+        <h3>If a tablet is lost or stops working</h3>
+        <ol class="rows" role="list">
+          <li><div><strong>Contact your elections duty lead.</strong> The Presiding Officer reports the issue and secures the ballot stock and station paperwork. A T2K engineer is on call on election day by live chat or phone.</div></li>
+          <li><div><strong>Check what has arrived before moving to a spare.</strong> Your council reconciles the records DPC has received against the available paperwork and physical stock. DPC can transfer station access to an approved spare once reconciliation is complete.</div></li>
+          <li><div><strong>Use your council’s paper contingency if needed.</strong> Your council decides when to switch, supplies the backup register and forms, and reconciles paper and digital records.</div></li>
+        </ol>
+        <aside class="callout">
+          <p><strong>Records saved only on a missing or unusable tablet cannot be recovered remotely.</strong> A spare can retrieve records that have already reached DPC.</p>
+        </aside>
+      </div>
+
+      <div class="block grid">
+        <div>
+          <h3>Check receipt</h3>
+          <p>In <strong>Data exports</strong>, <strong>Closed and reported</strong> means the signed close reached DPC and the returns are ready. <strong>Outstanding</strong> can include a station that has signed off offline.</p>
+        </div>
+        <div>
+          <h3>Export and confirm</h3>
+          <p>Once the signed close is accepted, council administrators securely export the records in the dashboard. The council confirms it has its copies and T2K confirms the completed export in writing before deletion.</p>
+        </div>
+      </div>
+      <p class="block"><strong>Before polling day</strong> · For setup and support arrangements, contact <a href="mailto:dpc-helpdesk@t2k.group">dpc-helpdesk@t2k.group</a>.</p>
+    </div>
+    <footer><span>T2K Group Limited · Elections team overview</span><span>2 / 5</span></footer>
+  </section>
+
+  <section class="sheet" aria-labelledby="storage">
+    <header class="masthead"><strong>Digital Poll Clerk</strong><span class="eyebrow">For IT and legal teams</span></header>
+    <div class="content">
+      <h2 id="storage">Data, access and offline protection</h2>
+      <p class="intro">Fasthosts hosts the live DPC service and backups in the UK on behalf of T2K Group Limited. The dashboard uses role-based access and approved tablets receive encrypted station packages.</p>
+
+      <div class="block">
+        <h3>Council systems</h3>
+        <p>The council holds the source register and prepares extracts for import. It controls access to its own systems and exported copies. The register can include names, addresses, postcodes, elector numbers, polling districts, eligibility markers, dates of birth if supplied, and proxy details. Anonymous entries omit names, addresses, postcodes and dates of birth.</p>
+      </div>
+
+      <div class="block">
+        <h3>DPC hosted service</h3>
+        <p>The service holds imported registers, station and contest settings, register snapshots, encrypted station packages, polling records and signed returns. Ballot issue records link elector references to paper serials. Station close records include the Presiding Officer’s name and drawn signature. DPC receives device status and, where enabled, the tablet’s last reported location.</p>
+        <p>Council viewers can read register data for their organisation. Editors and administrators can manage it within their permissions. Organisation administrators and DPC superadmins can access identifying voter ID reports and signed returns. DPC superadmins have cross-organisation access.</p>
+      </div>
+
+      <div class="block">
+        <h3>Approved Android tablets</h3>
+        <p>Tablets cache encrypted packages for their council. The Presiding Officer uses the station QR code and matching five-word password to unlock its register, contests and ballot paper ranges. Authorised station staff use the activated tablet.</p>
+        <p>Android Keystore protects the activated station data, which is stored in private app storage excluded from device backups. An encrypted local journal stores polling records pending upload. Signed device requests identify the approved tablet, and the service recognises retried events to avoid duplicate records.</p>
+      </div>
+
+      <aside class="callout">
+        <h3>Voter ID records</h3>
+        <p>The journal and hosted service retain the accepted document category and relevant outcomes, including turn-aways, refusal reasons and private checks. DPC keeps no images or document numbers.</p>
+      </aside>
+    </div>
+    <footer><span>T2K Group Limited · Technical overview</span><span>3 / 5</span></footer>
+  </section>
+
+  <section class="sheet" aria-labelledby="recovery">
+    <header class="masthead"><strong>Digital Poll Clerk</strong><span class="eyebrow">For IT and legal teams</span></header>
+    <div class="content">
+      <h2 id="recovery">Device recovery and proof of receipt</h2>
+      <p class="intro">A connection outage, a device transfer and a device wipe have different effects on the local polling journal.</p>
+
+      <div class="block">
+        <h3>What a replacement can recover</h3>
+        <p>A station transfer requires confirmation that the original tablet is out of service and that all issued papers and corresponding numbers list records have been reconciled. The approved replacement connects to DPC and retrieves accepted station issue records before it can issue ballots offline.</p>
+        <p>Issues saved only on the original tablet cannot be transferred. If that tablet becomes usable again, it can retry pending uploads while its encrypted journal remains intact and it still has station access.</p>
+      </div>
+
+      <div class="block grid">
+        <div>
+          <h3>Revoke station access</h3>
+          <p>Authorised council staff can revoke access in the dashboard. The server blocks station access immediately. An offline tablet acts on the change when it reconnects. Station revocation preserves the encrypted journal on the tablet.</p>
+        </div>
+        <div>
+          <h3>Disable and wipe a device</h3>
+          <p>The on-call T2K engineer can disable the device and trigger a wipe of DPC app data on reconnection. This removes unsynced records. The council and T2K assess the recovery options before deciding on a wipe.</p>
+        </div>
+      </div>
+
+      <div class="block">
+        <h3>How DPC verifies receipt</h3>
+        <ul class="facts">
+          <li><strong>During the poll.</strong> Dashboard totals use accepted ballot issues. Device details show the last heartbeat and the reported pending issue count. A stale heartbeat or unknown count leaves the current tablet status unverified.</li>
+          <li><strong>At close.</strong> The server validates the submitted journal against its accepted records and verifies the ballot paper accounts before making the signed returns available. <strong>Data exports</strong> shows last data received for outstanding stations and the accounts received.</li>
+          <li><strong>On the tablet.</strong> <strong>Data is pending</strong> appears while upload is incomplete. The tablet confirms once the signed close and all local station records have been acknowledged.</li>
+        </ul>
+      </div>
+    </div>
+    <footer><span>T2K Group Limited · Technical overview</span><span>4 / 5</span></footer>
+  </section>
+
+  <section class="sheet" aria-labelledby="assurance">
+    <header class="masthead"><strong>Digital Poll Clerk</strong><span class="eyebrow">For IT and legal teams</span></header>
+    <div class="content">
+      <h2 id="assurance">Retention, supplier assurance and the DPA</h2>
+      <p class="intro">The council acts as controller and T2K Group Limited acts as processor on the council’s documented instructions. Agree a written UK GDPR Article 28 data processing agreement (DPA) before processing live elector data.</p>
+
+      <div class="block">
+        <h3>Post-election return and deletion</h3>
+        <ol class="rows" role="list">
+          <li><div><strong>Export.</strong> After signed close, council administrators securely download the marked register and corresponding numbers list as PDF or CSV, the signed ballot paper account as PDF, and voter ID notes, refusals and totals as CSV.</div></li>
+          <li><div><strong>Confirm.</strong> The council confirms it has all copies and applies its own retention schedule. T2K confirms in writing that the export is complete before deletion begins.</div></li>
+          <li><div><strong>Delete.</strong> T2K wipes the encrypted DPC app data remotely and deletes live election data from the hosted service. An offline tablet receives the wipe on reconnection. Audit logs and backups are kept for 90 days after live deletion unless earlier deletion is requested, subject to legally required retention.</div></li>
+        </ol>
+      </div>
+
+      <div class="block grid">
+        <div>
+          <h3>Incident escalation</h3>
+          <p>T2K informs the council’s designated contact without undue delay once aware of a personal data breach. The council assesses whether to notify the ICO or affected people. Agree escalation contacts and wipe authority before polling day.</p>
+        </div>
+        <div>
+          <h3>Evidence for your review</h3>
+          <p>Request hosting and subprocessor details, available security testing and rehearsal evidence, sample exports, or incident and deletion procedures for your supplier assessment or DPIA.</p>
+        </div>
+      </div>
+      <p class="block">Fasthosts publishes details of its physical access controls and ISO 27001-certified data centres. <a href="https://www.fasthosts.co.uk/about/data-centres">Fasthosts data centre security</a></p>
+      <p class="links"><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/contracts-and-liabilities-between-controllers-and-processors-multi/what-needs-to-be-included-in-the-contract/">ICO guidance on processor contracts</a> · <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/contracts-and-liabilities-between-controllers-and-processors-multi/responsibilities-and-liabilities-for-controllers-using-a-processor/">ICO guidance on assessing a processor</a></p>
+    </div>
+    <footer><span>T2K Group Limited · Technical overview</span><span>5 / 5</span></footer>
+  </section>
+</main>
+</body>
+</html>

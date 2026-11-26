@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Poll Clerk | Data Processing Agreement | Version 1.0 Draft</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #eef2ef; color: #243b3a; font: 10.5pt/1.36 system-ui, sans-serif; }
+    main { max-width: 210mm; margin: 0 auto; }
+    section { margin: 16px 0; padding: 13mm 15mm; background: white; }
+    header { padding-top: 3mm; border-top: 3px solid #0b4c3b; font-size: 9pt; color: #0b4c3b; }
+    h1, h2 { color: #0b4c3b; }
+    h1 { margin: 4mm 0 3mm; font: 25pt/1.12 Georgia, serif; }
+    h2 { margin: 3mm 0 1mm; font-size: 12pt; }
+    p { margin: 0 0 2mm; }
+    .draft { padding: 2.5mm 3mm; border-left: 3px solid #0b4c3b; background: #e8f2ed; }
+    .signatures { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+    a { color: #0b4c3b; }
+    @page { size: A4 portrait; margin: 0; }
+    @media print {
+      body { background: white; font-size: 10pt; line-height: 1.34; }
+      section { margin: 0; padding-top: 11mm; padding-bottom: 10mm; break-after: page; }
+      section:last-child { break-after: auto; }
+      h2 { margin-top: 2.5mm; break-after: avoid; }
+      p, .signatures { break-inside: avoid; }
+    }
+    @media screen and (max-width: 600px) { section { padding: 7mm; } .signatures { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <section aria-labelledby="agreement">
+    <header><strong>Digital Poll Clerk</strong> · Version 1.0 · Draft for council and T2K review</header>
+    <h1 id="agreement">Data Processing Agreement</h1>
+    <p class="draft">Complete the bracketed fields and agree the deployment schedule before signature and before processing live elector data.</p>
+    <p>This agreement is between <strong>[council name]</strong> of <strong>[council address]</strong> (Controller), represented by <strong>[authorised council representative’s name and role]</strong>, and <strong>T2K Group Limited</strong>, 3rd Floor, 86–90 Paul Street, London, EC2A 4NE (Processor). It takes effect on <strong>[effective date]</strong> and supplements <strong>[service agreement and order reference]</strong>. These terms prevail on matters of personal data processing to the extent of any conflict. Terms such as personal data, processing and personal data breach have their UK GDPR meanings.</p>
+
+    <h2>1. Processing instructions</h2>
+    <p>The Controller determines the purposes of processing, establishes its lawful basis, provides required privacy information and gives lawful documented instructions. The Processor shall process personal data solely on those instructions, including for transfers, and only for the purposes and duration in the schedule. If UK law requires other processing, the Processor shall inform the Controller before processing unless that law prohibits notice on important grounds of public interest. The Processor shall immediately inform the Controller if, in its opinion, an instruction infringes applicable UK data protection law.</p>
+
+    <h2>2. Confidentiality and security</h2>
+    <p>The Processor shall limit access to authorised persons who need it for the service and who are bound by confidentiality. It shall implement appropriate technical and organisational measures under Article 32, including the agreed controls in the schedule, to protect confidentiality, integrity, availability and resilience. It shall maintain appropriate procedures to restore availability and access after an incident and regularly test and evaluate the effectiveness of its security measures.</p>
+
+    <h2>3. Subprocessors and transfers</h2>
+    <p>The Processor shall obtain prior specific written authorisation from the Controller before appointing or replacing a subprocessor. It shall impose equivalent data protection obligations by written contract, require sufficient guarantees, and remain fully liable to the Controller for the subprocessor’s performance. Processing, hosting and access shall be within the UK unless the Controller gives prior documented instructions for an exception and applicable UK GDPR international transfer requirements are met.</p>
+
+    <h2>4. Rights, breaches and other assistance</h2>
+    <p>Taking account of the nature of processing, the Processor shall assist the Controller with data subject rights through appropriate technical and organisational measures, insofar as possible. It shall promptly forward any request it receives and refer it to the Controller for response unless instructed or legally required to respond.</p>
+    <p>Taking account of the nature of processing and the information available to it, the Processor shall assist the Controller with Articles 32 to 36, including security, breach assessment and notification, DPIAs and prior consultation. It shall notify the Controller without undue delay after becoming aware of a personal data breach, using the agreed incident channel. It shall provide available facts, affected data and approximate scope, likely consequences, containment or mitigation, and an incident contact, with updates as facts become known. The Controller handles its regulatory and individual notifications.</p>
+
+    <h2>5. Return and deletion</h2>
+    <p>At the end of the services relating to processing, the Processor shall, at the Controller’s choice, return or delete all personal data and delete existing copies unless UK law requires storage. The parties shall apply the agreed schedule to devices, hosted data, logs and backups. While awaiting scheduled deletion, retained backup copies shall be protected and restricted from routine use. The Processor shall provide written confirmation of action taken and describe any legally required retention.</p>
+
+    <h2>6. Assurance and audits</h2>
+    <p>The Processor shall make available all information necessary to demonstrate compliance with Article 28 and allow and contribute to audits, including inspections, by the Controller or an auditor it mandates.</p>
+  </section>
+
+  <section aria-labelledby="schedule">
+    <header><strong>Digital Poll Clerk</strong> · Version 1.0 · Draft for council and T2K review</header>
+    <h1 id="schedule">Processing and deployment schedule</h1>
+    <h2>Scope and duration</h2>
+    <p><strong>Subject matter and purpose.</strong> Provide Digital Poll Clerk for <strong>[elections, stations and deployment reference]</strong>, including register preparation, elector check-in, ballot issue and voter ID records, central oversight, signed station returns and related support.</p>
+    <p><strong>Nature of processing.</strong> Import, store, validate, publish and distribute encrypted station packages. Activate and use station data on approved tablets, record and synchronise polling activity, generate and export reports, support devices, and return or delete data as instructed.</p>
+    <p><strong>Duration.</strong> From <strong>[start of authorised import]</strong> until <strong>[service end date or trigger]</strong>, followed by return and deletion within the periods below.</p>
+    <p><strong>Data subjects.</strong> Electors, including anonymous electors, proxies, people whose voter ID outcomes are recorded, polling staff and Presiding Officers, and council users.</p>
+    <p><strong>Types of data.</strong> Register identifiers, names, addresses, postcodes, eligibility and anonymous status markers, dates of birth where supplied, and proxy information. Ballot serials and elector references, voter ID categories and outcomes, station declarations, officer names and signatures, account and audit entries, and device telemetry including location where enabled.</p>
+
+    <h2>Security and operational controls</h2>
+    <p>Controls include organisation-scoped roles, restricted and audited exports, signed device requests, encrypted station packages and local polling journals, and Android Keystore protection for activated station data. The Controller owns paper fallback, backup materials and reconciliation. The Processor provides the station transfer feature. Complete <strong>[production hosting, backup and device controls, and test evidence]</strong>.</p>
+
+    <h2>Hosting and approved subprocessors</h2>
+    <p><strong>Hosting subprocessor for approval.</strong> Fasthosts Internet Limited hosts the live service and backups in the UK on behalf of T2K Group Limited. Before signature, confirm <strong>[whether Manchester is the facility for both]</strong>, <strong>[any other subprocessors and remote support access]</strong>, and <strong>[any authorised transfer and safeguard]</strong>. <a href="https://www.fasthosts.co.uk/about/data-centres">Fasthosts data centre security</a></p>
+
+    <h2>Return and deletion instructions</h2>
+    <p><strong>Handover.</strong> After signed close is received, Controller administrators securely export the marked register, corresponding numbers list, signed ballot paper accounts and applicable voter ID records through the dashboard. The Controller confirms it holds copies of all required records. The Processor confirms the export in writing before deletion begins. The Controller applies its own retention schedule to the exported copies.</p>
+    <p><strong>Deletion.</strong> After both confirmations, the Processor remotely wipes encrypted DPC app data and deletes live election data. Offline tablets receive the wipe on reconnection. The Processor keeps audit logs and backups for 90 days from live deletion unless the Controller requests earlier deletion, subject to legally required retention. Complete <strong>[handling after backup restoration and timing of written confirmation]</strong>.</p>
+
+    <h2>Support and incident contacts</h2>
+    <p>Authorised Controller staff can revoke station access in the dashboard. The Processor provides an on-call engineer on election day via live chat or phone. Pre-deployment contact is <a href="mailto:dpc-helpdesk@t2k.group">dpc-helpdesk@t2k.group</a>. Complete <strong>[duty and breach contacts, live chat route, on-call number, coverage and authority to approve a wipe]</strong>.</p>
+
+    <h2>Signatures</h2>
+    <div class="signatures">
+      <p><strong>For the council</strong><br><strong>[authorised representative’s name and role]</strong><br><strong>[signature and date]</strong></p>
+      <p><strong>For T2K Group Limited</strong><br><strong>[authorised representative’s name and role]</strong><br><strong>[signature and date]</strong></p>
+    </div>
+    <p><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/accountability-and-governance/contracts-and-liabilities-between-controllers-and-processors-multi/what-needs-to-be-included-in-the-contract/">ICO guidance on Article 28 contract terms</a></p>
+  </section>
+</main>
+</body>
+</html>
